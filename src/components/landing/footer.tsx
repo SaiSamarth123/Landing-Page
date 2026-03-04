@@ -7,7 +7,7 @@ const PRODUCT_LINKS = [
 ] as const;
 
 const DOCS_URL =
-  "https://docs.google.com/document/d/1bScTERfZ4Th27wemauZ6o5lL3zgjYR6nGxw90jdLhMk/edit?tab=t.0#heading=h.xkxbatvua45r";
+  "https://docs.google.com/document/d/1bScTERfZ4Th27wemauZ6o5lL3zgjYR6nGxw90jdLhMk/edit?usp=sharing";
 
 const RESOURCE_LINKS = [
   { label: "Documentation", href: DOCS_URL, external: true, inProgress: false },
