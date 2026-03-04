@@ -7,6 +7,7 @@ import { ScheduleDemoButton } from "@/components/landing/schedule-demo-button";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
+  { label: "Problem", href: "#problem" },
   { label: "Features", href: "#product-pillars" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Enterprise", href: "#enterprise" },
