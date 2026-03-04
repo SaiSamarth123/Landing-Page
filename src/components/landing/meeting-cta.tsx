@@ -1,8 +1,7 @@
 "use client";
 
-import { Calendar } from "lucide-react";
 import { motion } from "motion/react";
-import { Button } from "@/components/ui/button";
+import { ScheduleDemoButton } from "@/components/landing/schedule-demo-button";
 
 export function MeetingCTA() {
   return (
@@ -23,15 +22,12 @@ export function MeetingCTA() {
         <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
           See how Anchor gives your team control over every autonomous agent.
         </p>
-        <a href="#schedule-demo" className="mt-10 inline-block">
-          <Button
-            size="lg"
-            className="bg-[#ff4f00] px-12 py-6 text-lg font-semibold text-white shadow-[0_0_30px_rgba(255,79,0,0.35)] transition-all hover:scale-[1.02] hover:bg-[#ff6b2a] hover:shadow-[0_0_50px_rgba(255,79,0,0.45)]"
-          >
-            <Calendar className="mr-2 h-5 w-5" aria-hidden />
-            Schedule Demo
-          </Button>
-        </a>
+        <div className="mt-10">
+          <ScheduleDemoButton
+            className="px-12 py-6 text-lg shadow-[0_0_30px_rgba(255,79,0,0.35)] transition-all hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(255,79,0,0.45)]"
+            iconClassName="h-5 w-5"
+          />
+        </div>
       </motion.div>
     </section>
   );

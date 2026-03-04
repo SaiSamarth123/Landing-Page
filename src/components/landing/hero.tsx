@@ -1,9 +1,10 @@
 "use client";
 
-import { ArrowRight, Calendar, Info } from "lucide-react";
+import { ArrowRight, Info } from "lucide-react";
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ScheduleDemoButton } from "@/components/landing/schedule-demo-button";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -96,15 +97,10 @@ export function Hero() {
           variants={itemVariants}
           className="mt-10 flex flex-col gap-4 sm:flex-row"
         >
-          <a href="#schedule-demo">
-            <Button
-              size="lg"
-              className="w-full bg-[#ff4f00] text-base font-semibold text-white shadow-[0_0_20px_rgba(255,79,0,0.3)] transition-all hover:bg-[#ff6b2a] hover:shadow-[0_0_30px_rgba(255,79,0,0.4)] sm:w-auto"
-            >
-              <Calendar className="mr-2 h-5 w-5" aria-hidden />
-              Schedule Demo
-            </Button>
-          </a>
+          <ScheduleDemoButton
+            className="w-full text-base sm:w-auto"
+            iconClassName="h-5 w-5"
+          />
           <Button
             variant="outline"
             size="lg"

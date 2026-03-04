@@ -1,9 +1,9 @@
 "use client";
 
-import { Anchor, Calendar, Menu, X } from "lucide-react";
+import { Anchor, Menu, X } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { ScheduleDemoButton } from "@/components/landing/schedule-demo-button";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -48,15 +48,9 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <a href="#schedule-demo" className="hidden sm:block">
-            <Button
-              size="lg"
-              className="bg-[#ff4f00] font-semibold text-white shadow-[0_0_20px_rgba(255,79,0,0.3)] transition-all hover:bg-[#ff6b2a] hover:shadow-[0_0_30px_rgba(255,79,0,0.4)]"
-            >
-              <Calendar className="mr-2 h-4 w-4" aria-hidden />
-              Schedule Demo
-            </Button>
-          </a>
+          <div className="hidden sm:block">
+            <ScheduleDemoButton />
+          </div>
 
           {/* Mobile hamburger */}
           <button
@@ -89,15 +83,12 @@ export function Navbar() {
               {label}
             </a>
           ))}
-          <a href="#schedule-demo" onClick={handleNavClick} className="mt-2">
-            <Button
-              size="lg"
-              className="w-full bg-[#ff4f00] font-semibold text-white"
-            >
-              <Calendar className="mr-2 h-4 w-4" aria-hidden />
-              Schedule Demo
-            </Button>
-          </a>
+          <div className="mt-2">
+            <ScheduleDemoButton
+              className="w-full"
+              onClick={handleNavClick}
+            />
+          </div>
         </div>
       </div>
     </motion.header>
