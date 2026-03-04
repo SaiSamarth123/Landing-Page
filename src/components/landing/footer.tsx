@@ -6,16 +6,19 @@ const PRODUCT_LINKS = [
   { label: "Enterprise", href: "#enterprise" },
 ] as const;
 
+const DOCS_URL =
+  "https://docs.google.com/document/d/1bScTERfZ4Th27wemauZ6o5lL3zgjYR6nGxw90jdLhMk/edit?tab=t.0#heading=h.xkxbatvua45r";
+
 const RESOURCE_LINKS = [
-  { label: "Documentation", href: "#" },
-  { label: "SDK", href: "#" },
-  { label: "API Reference", href: "#" },
+  { label: "Documentation", href: DOCS_URL, external: true, inProgress: false },
+  { label: "SDK", href: "#", external: false, inProgress: true },
+  { label: "API Reference", href: "#", external: false, inProgress: true },
 ] as const;
 
 const COMPANY_LINKS = [
-  { label: "About", href: "#" },
-  { label: "Contact", href: "#schedule-demo" },
-  { label: "Blog", href: "#" },
+  { label: "About", href: "#", inProgress: true },
+  { label: "Contact", href: "#schedule-demo", inProgress: true },
+  { label: "Blog", href: "#", inProgress: true },
 ] as const;
 
 export function Footer() {
@@ -62,14 +65,26 @@ export function Footer() {
             <h4 className="font-mono text-sm font-bold uppercase tracking-wider text-foreground">
               Resources
             </h4>
+            <p className="mt-1 text-xs text-muted-foreground/70">
+              SDK, API Reference — in progress
+            </p>
             <ul className="mt-4 space-y-3">
-              {RESOURCE_LINKS.map(({ label, href }) => (
-                <li key={label}>
+              {RESOURCE_LINKS.map((link) => (
+                <li key={link.label}>
                   <a
-                    href={href}
+                    href={link.href}
+                    {...(link.external === true && {
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    })}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    {label}
+                    {link.label}
+                    {link.inProgress === true && (
+                      <span className="ml-1.5 text-xs text-muted-foreground/60">
+                        (in progress)
+                      </span>
+                    )}
                   </a>
                 </li>
               ))}
@@ -81,14 +96,22 @@ export function Footer() {
             <h4 className="font-mono text-sm font-bold uppercase tracking-wider text-foreground">
               Company
             </h4>
+            <p className="mt-1 text-xs text-muted-foreground/70">
+              About, Contact, Blog — in progress
+            </p>
             <ul className="mt-4 space-y-3">
-              {COMPANY_LINKS.map(({ label, href }) => (
-                <li key={label}>
+              {COMPANY_LINKS.map((link) => (
+                <li key={link.label}>
                   <a
-                    href={href}
+                    href={link.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    {label}
+                    {link.label}
+                    {link.inProgress === true && (
+                      <span className="ml-1.5 text-xs text-muted-foreground/60">
+                        (in progress)
+                      </span>
+                    )}
                   </a>
                 </li>
               ))}
