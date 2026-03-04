@@ -1,7 +1,8 @@
 "use client";
 
-import { Calendar, Info } from "lucide-react";
+import { ArrowRight, Calendar, Info } from "lucide-react";
 import { motion } from "motion/react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 const containerVariants = {
@@ -24,9 +25,18 @@ const itemVariants = {
   },
 };
 
+const SDK_STEPS = [
+  "Integrate SDK",
+  "Begin Tracking",
+  "Enforce Policies",
+] as const;
+
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-16 md:px-12">
+    <section
+      id="hero"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-16 md:px-12"
+    >
       {/* Background: radial gradient + grid pattern */}
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(255,79,0,0.15),transparent)]"
@@ -52,15 +62,36 @@ export function Hero() {
           variants={itemVariants}
           className="font-mono text-5xl font-bold tracking-tight text-foreground md:text-7xl"
         >
-          The Governance Layer for AI Agent Fleets.
+          The Control Plane for AI Agents
         </motion.h1>
         <motion.p
           variants={itemVariants}
           className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl"
         >
-          Centralized observability, tool-call authorization, and policy-as-code
-          for autonomous agents.
+          Observability, governance, and policy enforcement for autonomous
+          agent fleets.
         </motion.p>
+        <motion.div
+          variants={itemVariants}
+          className="mt-8 flex flex-wrap items-center justify-center gap-2 md:gap-4"
+        >
+          {SDK_STEPS.map((step, i) => (
+            <span key={step} className="flex items-center gap-2 md:gap-4">
+              <Badge
+                variant="outline"
+                className="border-[#ff4f00]/40 bg-[#ff4f00]/10 px-4 py-1.5 font-mono text-sm font-medium text-foreground"
+              >
+                {step}
+              </Badge>
+              {i < SDK_STEPS.length - 1 && (
+                <ArrowRight
+                  className="h-4 w-4 shrink-0 text-muted-foreground"
+                  aria-hidden
+                />
+              )}
+            </span>
+          ))}
+        </motion.div>
         <motion.div
           variants={itemVariants}
           className="mt-10 flex flex-col gap-4 sm:flex-row"

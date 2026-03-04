@@ -1,6 +1,13 @@
+export { ArchitectureFlow } from "./architecture-flow";
+export { AuditExplorer } from "./audit-explorer";
+export { ExecutionGateway } from "./execution-gateway";
+export { FleetDashboard } from "./fleet-dashboard";
 export { Footer } from "./footer";
 export { Hero } from "./hero";
+export { HowItWorks } from "./how-it-works";
 export { MeetingCTA } from "./meeting-cta";
 export { Navbar } from "./navbar";
+export { ProblemSection } from "./problem-section";
 export { ProductPillars } from "./product-pillars";
+export { EnterpriseFeatures } from "./enterprise-features";
 export { TraceVisualizer } from "./trace-visualizer";
