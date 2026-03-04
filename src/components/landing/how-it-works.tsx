@@ -51,7 +51,7 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="relative px-6 py-24 md:px-12"
+      className="relative scroll-mt-20 px-6 py-24 md:px-12"
     >
       <motion.div
         initial={{ opacity: 0, y: 24 }}

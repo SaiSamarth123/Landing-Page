@@ -36,7 +36,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-16 md:px-12"
+      className="relative scroll-mt-20 flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-16 md:px-12"
     >
       {/* Background: radial gradient + grid pattern */}
       <div
