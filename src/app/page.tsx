@@ -19,10 +19,15 @@ export default function Home() {
     <main className="min-h-screen bg-[#050505]">
       <Navbar />
       <Hero />
-      <ArchitectureFlow />
+      {/* What we're solving + why */}
       <ProblemSection />
+      {/* Basic how: where Anchor fits */}
+      <ArchitectureFlow />
+      {/* Basic how: 3 steps to get started */}
       <HowItWorks />
+      {/* What we offer */}
       <ProductPillars />
+      {/* Feature deep-dives */}
       <FleetDashboard />
       <ExecutionGateway />
       <TraceVisualizer />

@@ -109,9 +109,16 @@ export function ProductPillars() {
         transition={{ duration: 0.5 }}
         className="mx-auto max-w-7xl"
       >
+        <p className="mb-2 text-sm font-medium uppercase tracking-wider text-[#ff4f00]">
+          What you get
+        </p>
         <h2 className="mb-4 font-mono text-3xl font-bold text-foreground md:text-4xl">
           Built for Enterprise Control
         </h2>
+        <p className="mb-8 max-w-2xl text-muted-foreground">
+          Six pillars that give you visibility, governance, and control across
+          your entire agent fleet.
+        </p>
         <div
           className="mb-16 h-1 w-24 rounded-full bg-[#ff4f00]"
           aria-hidden

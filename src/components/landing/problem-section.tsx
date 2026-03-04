@@ -69,11 +69,18 @@ export function ProblemSection() {
         transition={{ duration: 0.5 }}
         className="mx-auto max-w-6xl"
       >
+        <p className="mb-2 text-sm font-medium uppercase tracking-wider text-[#ff4f00]">
+          The problem
+        </p>
         <h2 className="mb-4 font-mono text-3xl font-bold text-foreground md:text-4xl">
           AI Agents Are Scaling. Governance Isn&apos;t.
         </h2>
+        <p className="mb-8 max-w-2xl text-muted-foreground">
+          As teams adopt AI agents, tool access stays loose, visibility is
+          scattered, and there&apos;s no audit trail. Anchor fixes that.
+        </p>
         <div
-          className="mb-16 h-1 w-24 rounded-full bg-[#ff4f00]"
+          className="mb-12 h-1 w-24 rounded-full bg-[#ff4f00]"
           aria-hidden
         />
         <div className="grid gap-12 lg:grid-cols-2">

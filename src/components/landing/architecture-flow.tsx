@@ -54,17 +54,19 @@ export function ArchitectureFlow() {
         transition={{ duration: 0.5 }}
         className="mx-auto max-w-6xl"
       >
+        <p className="mb-2 text-sm font-medium uppercase tracking-wider text-[#ff4f00]">
+          How we solve it
+        </p>
         <h2 className="mb-4 font-mono text-3xl font-bold text-foreground md:text-4xl">
-          How Anchor Fits In
+          Anchor Sits in the Middle
         </h2>
         <div
-          className="mb-16 h-1 w-24 rounded-full bg-[#ff4f00]"
+          className="mb-4 h-1 w-24 rounded-full bg-[#ff4f00]"
           aria-hidden
         />
         <p className="mb-16 max-w-2xl text-lg text-muted-foreground">
-          Anchor sits between AI agents and external tools. Every tool
-          invocation passes through the gateway—authenticated, authorized,
-          audited, and traceable.
+          Every tool call flows through Anchor—from your agents, via the SDK,
+          to the gateway and policy engine. Nothing runs without governance.
         </p>
 
         {/* Desktop: horizontal flow */}
