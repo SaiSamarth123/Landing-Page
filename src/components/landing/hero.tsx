@@ -107,7 +107,7 @@ export function Hero() {
             className="w-full border-white/20 bg-transparent text-base font-medium text-foreground hover:bg-white/10 hover:text-foreground sm:w-auto"
             asChild
           >
-            <a href="#product-pillars">
+            <a href="#problem">
               <Info className="mr-2 h-5 w-5" aria-hidden />
               Learn More
             </a>
