@@ -8,10 +8,10 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { label: "Problem", href: "#problem" },
-  { label: "Features", href: "#product-pillars" },
+  { label: "Compliance", href: "#compliance" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Enterprise", href: "#enterprise" },
-  { label: "Demo", href: "#schedule-demo" },
+  // { label: "Demo", href: "#schedule-demo" },
 ] as const;
 
 export function Navbar() {
@@ -48,7 +48,7 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <div className="hidden sm:block">
             <ScheduleDemoButton />
           </div>
@@ -58,6 +58,7 @@ export function Navbar() {
             type="button"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-nav-menu"
             onClick={() => setMobileOpen((o) => !o)}
             className="flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-white/10 md:hidden"
           >
@@ -68,6 +69,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       <div
+        id="mobile-nav-menu"
         className={cn(
           "fixed left-0 right-0 top-16 z-40 border-b border-white/10 bg-[#050505]/98 backdrop-blur-xl transition-all duration-200 md:hidden",
           mobileOpen ? "opacity-100" : "pointer-events-none opacity-0"

@@ -1,37 +1,24 @@
 import {
-  ArchitectureFlow,
-  AuditExplorer,
-  ExecutionGateway,
+  ComplianceMapping,
   EnterpriseFeatures,
-  FleetDashboard,
   Footer,
   Hero,
   HowItWorks,
   MeetingCTA,
   Navbar,
+  PlatformDeepDives,
   ProblemSection,
-  ProductPillars,
-  TraceVisualizer,
 } from "@/components/landing";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#050505]">
+    <main className="min-h-screen bg-deep-space">
       <Navbar />
       <Hero />
-      {/* What we're solving + why */}
       <ProblemSection />
-      {/* Basic how: where Anchor fits */}
-      <ArchitectureFlow />
-      {/* Basic how: 3 steps to get started */}
+      <ComplianceMapping />
       <HowItWorks />
-      {/* What we offer */}
-      <ProductPillars />
-      {/* Feature deep-dives */}
-      <FleetDashboard />
-      <ExecutionGateway />
-      <TraceVisualizer />
-      <AuditExplorer />
+      <PlatformDeepDives />
       <EnterpriseFeatures />
       <MeetingCTA />
       <Footer />

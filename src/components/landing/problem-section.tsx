@@ -2,16 +2,33 @@
 
 import {
   AlertTriangle,
+  Bot,
   CheckCircle2,
+  ChevronDown,
+  ChevronRight,
+  CircleDollarSign,
+  Database,
+  DollarSign,
   EyeOff,
+  FileCode,
   FileWarning,
   Gauge,
   HardDrive,
+  Key,
   KeyRound,
   ScrollText,
+  Shield,
   ShieldX,
 } from "lucide-react";
 import { motion } from "motion/react";
+
+const NODES = [
+  { id: "agents", icon: Bot, label: "AI Agents", description: "Your agents connect via SDK" },
+  { id: "sdk", icon: Key, label: "Anchor SDK", description: "Authenticate and route calls" },
+  { id: "gateway", icon: Shield, label: "Anchor Gateway", description: "Central enforcement point" },
+  { id: "policy", icon: FileCode, label: "Policy Engine", description: "Every call evaluated against policy" },
+  { id: "store", icon: Database, label: "Audit + Trace Store", description: "Full trace and audit stored" },
+] as const;
 
 const PROBLEMS = [
   {
@@ -33,6 +50,10 @@ const PROBLEMS = [
   {
     icon: Gauge,
     text: "No cost or token visibility",
+  },
+  {
+    icon: DollarSign,
+    text: "No kill-switch for runaway API spend",
   },
 ] as const;
 
@@ -56,6 +77,10 @@ const SOLUTIONS = [
   {
     icon: ShieldX,
     text: "Token-level analytics and cost visibility",
+  },
+  {
+    icon: CircleDollarSign,
+    text: "Preventing Recursive Bankruptcy: Automated kill-switches for runaway API spend",
   },
 ] as const;
 
@@ -129,6 +154,106 @@ export function ProblemSection() {
             </ul>
           </div>
         </div>
+
+        {/* How we solve it: Anchor sits in the middle */}
+        <p className="mt-20 mb-2 text-sm font-medium uppercase tracking-wider text-[#ff4f00]">
+          How we solve it
+        </p>
+        <h3 className="mb-4 font-mono text-2xl font-bold text-foreground md:text-3xl">
+          Anchor Sits in the Middle
+        </h3>
+        <p className="mb-12 max-w-2xl text-muted-foreground">
+          Every tool call flows through Anchor—from your agents, via the SDK, to
+          the gateway and policy engine. Nothing runs without governance.
+        </p>
+
+        {/* Desktop: horizontal flow */}
+        <div className="hidden items-stretch gap-2 overflow-x-auto pb-4 lg:flex lg:justify-between">
+          {NODES.map((node, i) => {
+            const Icon = node.icon;
+            const isLast = i === NODES.length - 1;
+            return (
+              <motion.div
+                key={node.id}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="flex min-w-0 flex-1 items-center"
+              >
+                <div className="flex flex-1 flex-col items-center rounded-xl border border-white/10 bg-[#0a0a0a] p-6 text-center transition-colors hover:border-[#ff4f00]/30">
+                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-[#ff4f00]/20">
+                    <Icon className="h-6 w-6 text-[#ff4f00]" aria-hidden />
+                  </div>
+                  <h4 className="font-mono text-sm font-bold text-foreground">
+                    {node.label}
+                  </h4>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {node.description}
+                  </p>
+                </div>
+                {!isLast && (
+                  <div className="flex shrink-0 px-1">
+                    <ChevronRight
+                      className="h-6 w-6 text-muted-foreground"
+                      aria-hidden
+                    />
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Mobile: vertical flow */}
+        <div className="flex flex-col gap-4 lg:hidden">
+          {NODES.map((node, i) => {
+            const Icon = node.icon;
+            const isLast = i === NODES.length - 1;
+            return (
+              <motion.div
+                key={node.id}
+                initial={{ opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="flex items-center gap-4"
+              >
+                <div className="flex flex-1 items-center gap-4 rounded-xl border border-white/10 bg-[#0a0a0a] p-4 transition-colors hover:border-[#ff4f00]/30">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#ff4f00]/20">
+                    <Icon className="h-5 w-5 text-[#ff4f00]" aria-hidden />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="font-mono text-sm font-bold text-foreground">
+                      {node.label}
+                    </h4>
+                    <p className="text-xs text-muted-foreground">
+                      {node.description}
+                    </p>
+                  </div>
+                </div>
+                {!isLast && (
+                  <div className="flex shrink-0 justify-center">
+                    <ChevronDown
+                      className="h-5 w-5 text-muted-foreground"
+                      aria-hidden
+                    />
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="mt-12 rounded-lg border border-emerald-500/20 bg-emerald-500/5 px-4 py-3 text-center font-mono text-sm text-emerald-400/90"
+        >
+          Policy Engine → Execute or Deny → Audit Log + Trace Store
+        </motion.div>
       </motion.div>
     </section>
   );
