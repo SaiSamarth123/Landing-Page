@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { label: "Compliance", href: "#compliance" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Enterprise", href: "#enterprise" },
-  { label: "Demo", href: "#schedule-demo" },
+  // { label: "Demo", href: "#schedule-demo" },
 ] as const;
 
 export function Navbar() {
@@ -49,16 +49,8 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <a
-            href="#hero"
-            className="hidden shrink-0 sm:inline-flex h-9 items-center justify-center rounded-md bg-[#ff4f00] px-4 text-sm font-semibold text-white shadow-[0_0_20px_rgba(255,79,0,0.3)] transition-all hover:bg-[#ff6b2a] hover:shadow-[0_0_30px_rgba(255,79,0,0.4)]"
-          >
-            Join Waitlist
-          </a>
           <div className="hidden sm:block">
-            <ScheduleDemoButton
-              className="border-white/20 bg-transparent font-medium text-foreground shadow-none hover:bg-white/10 hover:text-foreground"
-            />
+            <ScheduleDemoButton />
           </div>
 
           {/* Mobile hamburger */}
@@ -66,6 +58,7 @@ export function Navbar() {
             type="button"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-nav-menu"
             onClick={() => setMobileOpen((o) => !o)}
             className="flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-white/10 md:hidden"
           >
@@ -76,6 +69,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       <div
+        id="mobile-nav-menu"
         className={cn(
           "fixed left-0 right-0 top-16 z-40 border-b border-white/10 bg-[#050505]/98 backdrop-blur-xl transition-all duration-200 md:hidden",
           mobileOpen ? "opacity-100" : "pointer-events-none opacity-0"
@@ -92,16 +86,9 @@ export function Navbar() {
               {label}
             </a>
           ))}
-          <div className="mt-2 flex flex-col gap-2">
-            <a
-              href="#hero"
-              onClick={handleNavClick}
-              className="flex h-10 w-full items-center justify-center rounded-md bg-[#ff4f00] font-semibold text-white"
-            >
-              Join Waitlist
-            </a>
+          <div className="mt-2">
             <ScheduleDemoButton
-              className="w-full border-white/20 bg-transparent font-medium text-foreground shadow-none hover:bg-white/10"
+              className="w-full"
               onClick={handleNavClick}
             />
           </div>

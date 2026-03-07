@@ -19,11 +19,8 @@ export function FleetDashboard() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5 }}
-        className="mx-auto max-w-4xl"
+        className="mx-auto max-w-6xl"
       >
-        <p className="mb-2 text-sm font-medium uppercase tracking-wider text-[#ff4f00]">
-          See it in action
-        </p>
         <h2 className="mb-4 font-mono text-3xl font-bold text-foreground md:text-4xl">
           Agent Fleet Overview
         </h2>

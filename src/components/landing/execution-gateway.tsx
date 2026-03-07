@@ -42,6 +42,9 @@ export function ExecutionGateway() {
         transition={{ duration: 0.5 }}
         className="mx-auto max-w-6xl"
       >
+        <p className="mb-2 text-sm font-medium uppercase tracking-wider text-[#ff4f00]">
+          See the platform in action
+        </p>
         <h2 className="mb-4 font-mono text-3xl font-bold text-foreground md:text-4xl">
           Default-Deny Execution Gateway
         </h2>

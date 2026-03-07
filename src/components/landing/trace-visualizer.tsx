@@ -74,7 +74,7 @@ export function TraceVisualizer() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const }}
-        className="mx-auto max-w-3xl"
+        className="mx-auto max-w-6xl"
       >
         <h2 className="mb-4 font-mono text-3xl font-bold text-foreground md:text-4xl">
           Execution Tracing

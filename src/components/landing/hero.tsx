@@ -5,7 +5,6 @@ import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScheduleDemoButton } from "@/components/landing/schedule-demo-button";
-import { WaitlistForm } from "@/components/landing/waitlist-form";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -58,21 +57,19 @@ export function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center"
+        className="relative z-10 mx-auto flex max-w-6xl flex-col items-center text-center"
       >
         <motion.h1
           variants={itemVariants}
           className="font-mono text-5xl font-bold tracking-tight text-foreground md:text-7xl"
         >
-          The Brakes for Your AI Agents to Safely Go 100mph.
+        The Control Plane for AI Agents
         </motion.h1>
         <motion.p
           variants={itemVariants}
           className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl"
         >
-          Anchor is the deterministic control plane that enforces safety,
-          prevents recursive bankruptcy, and ensures regulatory compliance for
-          autonomous agent fleets.
+         Anchor is the centralized governance layer that authorizes, audits, and enforces every tool invocation. Stop guessing what your agents are doing and start defining it.
         </motion.p>
         <motion.div
           variants={itemVariants}
@@ -99,10 +96,9 @@ export function Hero() {
           variants={itemVariants}
           className="mt-10 flex flex-col items-center gap-6"
         >
-          <WaitlistForm variant="inline" className="w-full max-w-lg" />
           <div className="flex flex-col gap-4 sm:flex-row">
             <ScheduleDemoButton
-              className="w-full border-white/20 bg-transparent font-medium text-foreground shadow-none hover:bg-white/10 hover:text-foreground sm:w-auto"
+              className="w-full sm:w-auto"
               iconClassName="h-5 w-5"
             />
             <Button

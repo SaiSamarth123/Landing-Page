@@ -60,7 +60,7 @@ export function AuditExplorer() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5 }}
-        className="mx-auto max-w-5xl"
+        className="mx-auto max-w-6xl"
       >
         <h2 className="mb-4 font-mono text-3xl font-bold text-foreground md:text-4xl">
           Audit & Compliance
