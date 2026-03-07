@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScheduleDemoButton } from "@/components/landing/schedule-demo-button";
+import { WaitlistForm } from "@/components/landing/waitlist-form";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -63,14 +64,15 @@ export function Hero() {
           variants={itemVariants}
           className="font-mono text-5xl font-bold tracking-tight text-foreground md:text-7xl"
         >
-          The Control Plane for AI Agents
+          The Brakes for Your AI Agents to Safely Go 100mph.
         </motion.h1>
         <motion.p
           variants={itemVariants}
           className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl"
         >
-          Observability, governance, and policy enforcement for autonomous
-          agent fleets.
+          Anchor is the deterministic control plane that enforces safety,
+          prevents recursive bankruptcy, and ensures regulatory compliance for
+          autonomous agent fleets.
         </motion.p>
         <motion.div
           variants={itemVariants}
@@ -95,23 +97,26 @@ export function Hero() {
         </motion.div>
         <motion.div
           variants={itemVariants}
-          className="mt-10 flex flex-col gap-4 sm:flex-row"
+          className="mt-10 flex flex-col items-center gap-6"
         >
-          <ScheduleDemoButton
-            className="w-full text-base sm:w-auto"
-            iconClassName="h-5 w-5"
-          />
-          <Button
-            variant="outline"
-            size="lg"
-            className="w-full border-white/20 bg-transparent text-base font-medium text-foreground hover:bg-white/10 hover:text-foreground sm:w-auto"
-            asChild
-          >
-            <a href="#problem">
-              <Info className="mr-2 h-5 w-5" aria-hidden />
-              Learn More
-            </a>
-          </Button>
+          <WaitlistForm variant="inline" className="w-full max-w-lg" />
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <ScheduleDemoButton
+              className="w-full border-white/20 bg-transparent font-medium text-foreground shadow-none hover:bg-white/10 hover:text-foreground sm:w-auto"
+              iconClassName="h-5 w-5"
+            />
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full border-white/20 bg-transparent text-base font-medium text-foreground hover:bg-white/10 hover:text-foreground sm:w-auto"
+              asChild
+            >
+              <a href="#problem">
+                <Info className="mr-2 h-5 w-5" aria-hidden />
+                Learn More
+              </a>
+            </Button>
+          </div>
         </motion.div>
       </motion.div>
     </section>

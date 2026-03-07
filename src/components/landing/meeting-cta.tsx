@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { ScheduleDemoButton } from "@/components/landing/schedule-demo-button";
+import { WaitlistForm } from "@/components/landing/waitlist-form";
 
 export function MeetingCTA() {
   return (
@@ -20,11 +21,13 @@ export function MeetingCTA() {
           Secure Your Fleet
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-          See how Anchor gives your team control over every autonomous agent.
+          Join the waitlist or schedule a demo to see how Anchor gives your team
+          control over every autonomous agent.
         </p>
-        <div className="mt-10">
+        <div className="mt-10 flex flex-col items-center gap-6">
+          <WaitlistForm variant="stacked" className="w-full max-w-md" />
           <ScheduleDemoButton
-            className="px-12 py-6 text-lg shadow-[0_0_30px_rgba(255,79,0,0.35)] transition-all hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(255,79,0,0.45)]"
+            className="border-white/20 bg-transparent font-medium text-foreground shadow-none hover:bg-white/10 hover:text-foreground"
             iconClassName="h-5 w-5"
           />
         </div>

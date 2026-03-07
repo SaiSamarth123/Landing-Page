@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { label: "Problem", href: "#problem" },
-  { label: "Features", href: "#product-pillars" },
+  { label: "Compliance", href: "#compliance" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Enterprise", href: "#enterprise" },
   { label: "Demo", href: "#schedule-demo" },
@@ -48,9 +48,17 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          <a
+            href="#hero"
+            className="hidden shrink-0 sm:inline-flex h-9 items-center justify-center rounded-md bg-[#ff4f00] px-4 text-sm font-semibold text-white shadow-[0_0_20px_rgba(255,79,0,0.3)] transition-all hover:bg-[#ff6b2a] hover:shadow-[0_0_30px_rgba(255,79,0,0.4)]"
+          >
+            Join Waitlist
+          </a>
           <div className="hidden sm:block">
-            <ScheduleDemoButton />
+            <ScheduleDemoButton
+              className="border-white/20 bg-transparent font-medium text-foreground shadow-none hover:bg-white/10 hover:text-foreground"
+            />
           </div>
 
           {/* Mobile hamburger */}
@@ -84,9 +92,16 @@ export function Navbar() {
               {label}
             </a>
           ))}
-          <div className="mt-2">
+          <div className="mt-2 flex flex-col gap-2">
+            <a
+              href="#hero"
+              onClick={handleNavClick}
+              className="flex h-10 w-full items-center justify-center rounded-md bg-[#ff4f00] font-semibold text-white"
+            >
+              Join Waitlist
+            </a>
             <ScheduleDemoButton
-              className="w-full"
+              className="w-full border-white/20 bg-transparent font-medium text-foreground shadow-none hover:bg-white/10"
               onClick={handleNavClick}
             />
           </div>
