@@ -15,10 +15,10 @@ interface WaitlistFormProps {
 
 export function WaitlistForm({ className, variant = "inline" }: WaitlistFormProps) {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) {
       setStatus("error");
@@ -30,11 +30,22 @@ export function WaitlistForm({ className, variant = "inline" }: WaitlistFormProp
       setMessage("Please enter a valid email address.");
       return;
     }
-    // Placeholder: log for now; replace with API call later
-    console.log("Waitlist signup:", email);
-    setStatus("success");
-    setMessage("You're on the list. We'll be in touch.");
-    setEmail("");
+    setStatus("loading");
+    setMessage("");
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("success");
+      setMessage("You're on the list. We'll be in touch.");
+      setEmail("");
+    } catch {
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -71,9 +82,10 @@ export function WaitlistForm({ className, variant = "inline" }: WaitlistFormProp
       <Button
         type="submit"
         size="lg"
-        className="h-11 shrink-0 bg-[#ff4f00] font-semibold text-white shadow-[0_0_20px_rgba(255,79,0,0.3)] transition-all hover:bg-[#ff6b2a] hover:shadow-[0_0_30px_rgba(255,79,0,0.4)] sm:px-8"
+        disabled={status === "loading"}
+      className="h-11 shrink-0 bg-[#ff4f00] font-semibold text-white shadow-[0_0_20px_rgba(255,79,0,0.3)] transition-all hover:bg-[#ff6b2a] hover:shadow-[0_0_30px_rgba(255,79,0,0.4)] disabled:opacity-60 sm:px-8"
       >
-        Join the Waitlist
+        {status === "loading" ? "Joining..." : "Join the Waitlist"}
       </Button>
       {message && (
         <p
