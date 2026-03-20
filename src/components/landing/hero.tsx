@@ -62,7 +62,7 @@ export function Hero() {
           variants={itemVariants}
           className="font-mono text-5xl font-bold tracking-tight text-foreground md:text-7xl"
         >
-          The Governance for the Agentic Stack.
+          The Governance for the Agentic Stack
         </motion.h1>
         <motion.p
           variants={itemVariants}
