@@ -1,6 +1,7 @@
 import {
   ComplianceMapping,
   EnterpriseFeatures,
+  EnterprisePillars,
   Footer,
   Hero,
   HowItWorks,
@@ -16,9 +17,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ProblemSection />
-      <ComplianceMapping />
       <HowItWorks />
       <PlatformDeepDives />
+      <ComplianceMapping />
+      <EnterprisePillars />
       <EnterpriseFeatures />
       <MeetingCTA />
       <Footer />
