@@ -1,5 +1,6 @@
 export { ComplianceMapping } from "./compliance-mapping";
 export { EnterpriseFeatures } from "./enterprise-features";
+export { EnterprisePillars } from "./enterprise-pillars";
 export { Footer } from "./footer";
 export { Hero } from "./hero";
 export { HowItWorks } from "./how-it-works";

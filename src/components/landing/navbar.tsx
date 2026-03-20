@@ -8,10 +8,9 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { label: "Problem", href: "#problem" },
-  { label: "Compliance", href: "#compliance" },
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Enterprise", href: "#enterprise" },
-  // { label: "Demo", href: "#schedule-demo" },
+  { label: "Core Tenants", href: "#platform" },
+  { label: "Compliance", href: "#compliance" },
 ] as const;
 
 export function Navbar() {
