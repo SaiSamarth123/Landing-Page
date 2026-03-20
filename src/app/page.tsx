@@ -1,14 +1,14 @@
 import {
-  ComplianceMapping,
+  ArchitectureFlow,
+  ExecutionGateway,
   EnterpriseFeatures,
-  EnterprisePillars,
   Footer,
   Hero,
   HowItWorks,
   MeetingCTA,
   Navbar,
-  PlatformDeepDives,
   ProblemSection,
+  ProductPillars,
 } from "@/components/landing";
 
 export default function Home() {
@@ -17,10 +17,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ProblemSection />
+      <ArchitectureFlow />
       <HowItWorks />
-      <PlatformDeepDives />
-      <ComplianceMapping />
-      <EnterprisePillars />
+      <ExecutionGateway />
+      <ProductPillars />
       <EnterpriseFeatures />
       <MeetingCTA />
       <Footer />

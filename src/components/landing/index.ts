@@ -1,6 +1,9 @@
+export { ArchitectureFlow } from "./architecture-flow";
 export { ComplianceMapping } from "./compliance-mapping";
 export { EnterpriseFeatures } from "./enterprise-features";
 export { EnterprisePillars } from "./enterprise-pillars";
+export { ExecutionGateway } from "./execution-gateway";
+export { ProductPillars } from "./product-pillars";
 export { Footer } from "./footer";
 export { Hero } from "./hero";
 export { HowItWorks } from "./how-it-works";

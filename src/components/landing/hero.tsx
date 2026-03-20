@@ -1,9 +1,8 @@
 "use client";
 
-import { ArrowRight, Info } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ScheduleDemoButton } from "@/components/landing/schedule-demo-button";
 
 const containerVariants = {
@@ -63,13 +62,13 @@ export function Hero() {
           variants={itemVariants}
           className="font-mono text-5xl font-bold tracking-tight text-foreground md:text-7xl"
         >
-        The Control Plane for AI Agents
+          The Governance for the Agentic Stack.
         </motion.h1>
         <motion.p
           variants={itemVariants}
           className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl"
         >
-         Anchor is the centralized governance layer that authorizes, audits, and enforces every tool invocation. Stop guessing what your agents are doing and start defining it.
+          Stop babysitting every tool call. Start shipping autonomous features.
         </motion.p>
         <motion.div
           variants={itemVariants}
@@ -94,25 +93,23 @@ export function Hero() {
         </motion.div>
         <motion.div
           variants={itemVariants}
-          className="mt-10 flex flex-col items-center gap-6"
+          className="mt-10 flex flex-col gap-4 sm:flex-row"
         >
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <ScheduleDemoButton
-              className="w-full sm:w-auto"
-              iconClassName="h-5 w-5"
-            />
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full border-white/20 bg-transparent text-base font-medium text-foreground hover:bg-white/10 hover:text-foreground sm:w-auto"
-              asChild
-            >
-              <a href="#problem">
-                <Info className="mr-2 h-5 w-5" aria-hidden />
-                Learn More
-              </a>
-            </Button>
-          </div>
+          <ScheduleDemoButton
+            className="w-full text-base sm:w-auto"
+            iconClassName="h-5 w-5"
+          />
+          {/* <Button
+            variant="outline"
+            size="lg"
+            className="w-full border-white/20 bg-transparent text-base font-medium text-foreground hover:bg-white/10 hover:text-foreground sm:w-auto"
+            asChild
+          >
+            <a href="#problem">
+              <Info className="mr-2 h-5 w-5" aria-hidden />
+              Learn More
+            </a>
+          </Button> */}
         </motion.div>
       </motion.div>
     </section>
