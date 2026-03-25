@@ -1,7 +1,4 @@
 import {
-  ArchitectureFlow,
-  ExecutionGateway,
-  EnterpriseFeatures,
   Footer,
   Hero,
   HowItWorks,
@@ -17,11 +14,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ProblemSection />
-      <ArchitectureFlow />
       <HowItWorks />
-      <ExecutionGateway />
       <ProductPillars />
-      <EnterpriseFeatures />
       <MeetingCTA />
       <Footer />
     </main>

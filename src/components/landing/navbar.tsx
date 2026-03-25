@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { label: "Problem", href: "#problem" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Core Tenets", href: "#product-pillars" },
-  { label: "Compliance", href: "#compliance" },
+  { label: "Waitlist", href: "#schedule-demo" },
 ] as const;
 
 export function Navbar() {

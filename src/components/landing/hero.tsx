@@ -62,13 +62,13 @@ export function Hero() {
           variants={itemVariants}
           className="font-mono text-5xl font-bold tracking-tight text-foreground md:text-7xl"
         >
-          The Governance for the Agentic Stack
+          Ship agents fast. Govern them faster.
         </motion.h1>
         <motion.p
           variants={itemVariants}
           className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl"
         >
-          Stop babysitting every tool call. Start shipping autonomous features.
+          The control plane for AI agents. Track every tool call, enforce access policies, and stop runaway costs before they hit production.
         </motion.p>
         <motion.div
           variants={itemVariants}

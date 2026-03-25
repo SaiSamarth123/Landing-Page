@@ -22,15 +22,11 @@ const PROBLEMS = [
   },
   {
     icon: ScrollText,
-    text: "No consistent audit trail for compliance",
-  },
-  {
-    icon: HardDrive,
-    text: "Hardcoded tool access in scripts",
+    text: "No audit trail when things go wrong",
   },
   {
     icon: ShieldX,
-    text: "No structured policy enforcement",
+    text: "Agents can call any tool without restrictions",
   },
   {
     icon: Gauge,
@@ -38,7 +34,7 @@ const PROBLEMS = [
   },
   {
     icon: DollarSign,
-    text: "No kill-switch for runaway API spend",
+    text: "No way to stop runaway agents until it's too late",
   },
 ] as const;
 
@@ -49,23 +45,19 @@ const SOLUTIONS = [
   },
   {
     icon: ScrollText,
-    text: "Immutable audit logs and trace storage",
+    text: "Get a complete audit trail for every tool call",
   },
   {
     icon: KeyRound,
-    text: "Policy-as-code with version control",
-  },
-  {
-    icon: FileWarning,
-    text: "Every tool invocation authenticated and authorized",
-  },
-  {
-    icon: ShieldX,
-    text: "Token-level analytics and cost visibility",
+    text: "Enforce policies on what agents can and cannot do",
   },
   {
     icon: CircleDollarSign,
-    text: "Preventing Recursive Bankruptcy: Automated kill-switches for runaway API spend",
+    text: "Track token usage and cost across all agents",
+  },
+  {
+    icon: ShieldX,
+    text: "Automatically stop runaway behavior before costs explode",
   },
 ] as const;
 
@@ -89,8 +81,7 @@ export function ProblemSection() {
           AI Agents Are Scaling. Governance Isn&apos;t.
         </h2>
         <p className="mb-8 max-w-2xl text-muted-foreground">
-          As teams adopt AI agents, tool access stays loose, visibility is
-          scattered, and there&apos;s no audit trail. Anchor fixes that.
+          Teams are shipping AI agents fast, but they have no visibility into what those agents are doing, what tools they are calling, or how much they are spending.
         </p>
         <div
           className="mb-12 h-1 w-24 rounded-full bg-[#ff4f00]"
